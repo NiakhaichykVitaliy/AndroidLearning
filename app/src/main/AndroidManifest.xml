@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlgorithmicsActivity"></activity>
+        <activity android:name=".AlgorithmicsActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

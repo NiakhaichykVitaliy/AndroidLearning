@@ -60,19 +60,8 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                List<String> list = new ArrayList();
-                while (s.length() > 3) {
-                    list.add((String) s.subSequence(0, 3));
-                    s = s.subSequence(3, s.length());
-                }
-                list.add((String) s);
-                String nothing = "";
-                for (String s2 : list) {
-                    String k = reverseString(s2);
-                    nothing += k;
-                }
-                textView1.setText(nothing);
 
+                textView1.setText(reverseString((String) s));
             }
 
             @Override
@@ -84,12 +73,28 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
     }
 
-    public static String reverseString(String str) {
-        if ((null == str) || str.length() <= 1) {
-            return str;
+    private static String reverseString(String str) {
+        String result = "";
+
+        while (str.length() >= 3) {
+            String k = str.substring(0, 3);
+            result += recursiveReverse(k);
+            str = str.substring(3);
         }
-        return reverseString(str);
+        str = recursiveReverse(str);
+        result = result + str;
+
+        return result;
+
     }
+
+    static String recursiveReverse(String s) {
+        if ((null == s) || (s.length() <= 1)) {
+            return s;
+        }
+        return recursiveReverse(s.substring(1)) + s.charAt(0);
+    }
+
 
 }
 
