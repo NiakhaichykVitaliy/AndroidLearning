@@ -12,26 +12,24 @@ import java.util.List;
 
 public class AlgorithmicsActivity extends AppCompatActivity {
 
-    private TextView textView;
-    private EditText editText;
-    private TextView textView1;
-    private EditText editText1;
+    private TextView inputDigitTextView;
+    private EditText sumEditText;
+    private TextView inputStringView;
+    private EditText reversedStringText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_algorithmics);
 
-        textView = findViewById(R.id.textView);
-        editText = findViewById(R.id.editText);
-        textView1 = findViewById(R.id.textView1);
-        editText1 = findViewById(R.id.editText1);
+        inputDigitTextView = findViewById(R.id.inputDigitTextView);
+        sumEditText = findViewById(R.id.sumEditText);
+        inputStringView = findViewById(R.id.inputStringView);
+        reversedStringText = findViewById(R.id.reversedStringText);
 
-        editText.addTextChangedListener(new TextWatcher() {
+        sumEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -42,7 +40,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
                     int digitChar = Character.getNumericValue(s.charAt(i));
                     sum += digitChar;
                 }
-                textView.setText(String.valueOf(sum));
+                inputDigitTextView.setText(String.valueOf(sum));
 
             }
 
@@ -52,7 +50,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
             }
         });
 
-        editText1.addTextChangedListener(new TextWatcher() {
+        reversedStringText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -61,7 +59,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                textView1.setText(reverseString(s.toString()));
+                inputStringView.setText(reverseString(s.toString()));
             }
 
             @Override
@@ -69,23 +67,20 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     private static String reverseString(String str) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         while (str.length() >= 3) {
             String k = str.substring(0, 3);
-            result += recursiveReverse(k);
+            result.append(recursiveReverse(k));
             str = str.substring(3);
         }
         str = recursiveReverse(str);
-        result = result + str;
+        result.append(str);
 
-        return result;
-
+        return result.toString();
     }
 
     static String recursiveReverse(String s) {

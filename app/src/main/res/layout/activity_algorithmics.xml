@@ -7,14 +7,14 @@
 
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/sumEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:digits="0123456789"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/inputDigitTextView"
         android:layout_width="match_parent"
         android:layout_height="53dp"
         android:textAlignment="center"
@@ -24,7 +24,7 @@
     </TextView>>
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/reversedStringText"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:inputType="text"
@@ -33,7 +33,7 @@
         tools:ignore="DuplicateIds" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/inputStringView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
