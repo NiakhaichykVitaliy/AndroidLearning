@@ -61,7 +61,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                textView1.setText(reverseString((String) s));
+                textView1.setText(reverseString(s.toString()));
             }
 
             @Override
