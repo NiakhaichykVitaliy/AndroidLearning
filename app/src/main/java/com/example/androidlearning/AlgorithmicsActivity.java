@@ -14,8 +14,6 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
     private TextView textView;
     private EditText editText;
-    private TextView textView1;
-    private EditText editText1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +22,6 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
         editText = findViewById(R.id.editText);
-        textView1 = findViewById(R.id.textView1);
-        editText1 = findViewById(R.id.editText1);
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -52,43 +48,6 @@ public class AlgorithmicsActivity extends AppCompatActivity {
             }
         });
 
-        editText1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                List<String> list = new ArrayList();
-                while (s.length() > 3) {
-                    list.add((String) s.subSequence(0, 3));
-                    s = s.subSequence(3, s.length());
-                }
-                list.add((String) s);
-                String nothing = "";
-                for (String s2 : list) {
-                    String k = reverseString(s2);
-                    nothing += k;
-                }
-                textView1.setText(nothing);
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-
-    }
-
-    public static String reverseString(String str) {
-        if ((null == str) || str.length() <= 1) {
-            return str;
-        }
-        return reverseString(str);
     }
 
 }

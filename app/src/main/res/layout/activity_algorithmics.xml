@@ -23,24 +23,6 @@
 
     </TextView>>
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:inputType="text"
-        android:textColor="@color/colorAccent"
-        android:textStyle="italic"
-        tools:ignore="DuplicateIds" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:textStyle="italic"
-        tools:ignore="DuplicateIds">
-
-    </TextView>>
 
 </LinearLayout>
