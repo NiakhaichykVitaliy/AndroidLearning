@@ -52,8 +52,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                inputStringView.setText(reverseString(s.toString()));
+                inputStringView.setText(reverseStringByThreeSymbols(s.toString()));
             }
 
             @Override
@@ -62,27 +61,23 @@ public class AlgorithmicsActivity extends AppCompatActivity {
         });
     }
 
-    private String reverseString(String str) {
+    private String reverseStringByThreeSymbols(String str) {
         StringBuilder result = new StringBuilder();
 
         while (str.length() >= 3) {
             String k = str.substring(0, 3);
-            result.append(recursiveReverse(k));
+            result.append(reverseString(k));
             str = str.substring(3);
         }
-        str = recursiveReverse(str);
+        str = reverseString(str);
         result.append(str);
 
         return result.toString();
     }
 
-    private String recursiveReverse(String s) {
+    private String reverseString(String s) {
         StringBuffer buffer = new StringBuffer(s);
         s = buffer.reverse().toString();
         return s;
     }
 }
-
-
-
-
