@@ -7,14 +7,14 @@
 
 
     <EditText
-        android:id="@+id/sumEditText"
+        android:id="@+id/sum_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:digits="0123456789"/>
+        android:digits="0123456789"
+        android:inputType="number" />
 
     <TextView
-        android:id="@+id/inputDigitTextView"
+        android:id="@+id/input_digit_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -24,22 +24,19 @@
     </TextView>>
 
     <EditText
-        android:id="@+id/reversedStringText"
+        android:id="@+id/reversed_string_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:textColor="@color/colorAccent"
-        android:textStyle="italic"
-        tools:ignore="DuplicateIds" />
+        android:textStyle="italic" />
 
     <TextView
-        android:id="@+id/inputStringView"
+        android:id="@+id/input_string_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
-        android:textStyle="italic"
-        tools:ignore="DuplicateIds">
+        android:textStyle="italic">
 
     </TextView>>
 

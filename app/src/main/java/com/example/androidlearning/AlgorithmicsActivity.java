@@ -7,9 +7,6 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AlgorithmicsActivity extends AppCompatActivity {
 
     private TextView inputDigitTextView;
@@ -22,21 +19,20 @@ public class AlgorithmicsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_algorithmics);
 
-        inputDigitTextView = findViewById(R.id.inputDigitTextView);
-        sumEditText = findViewById(R.id.sumEditText);
-        inputStringView = findViewById(R.id.inputStringView);
-        reversedStringText = findViewById(R.id.reversedStringText);
+        inputDigitTextView = findViewById(R.id.input_digit_text_view);
+        sumEditText = findViewById(R.id.sum_edit_text);
+        inputStringView = findViewById(R.id.input_string_view);
+        reversedStringText = findViewById(R.id.reversed_string_text);
 
         sumEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 int sum = 0;
-                List<Character> list = new ArrayList<>();
                 for (int i = 0; i < s.length(); i++) {
-                    list.add(s.charAt(i));
                     int digitChar = Character.getNumericValue(s.charAt(i));
                     sum += digitChar;
                 }
@@ -46,14 +42,12 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
 
         reversedStringText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -64,12 +58,11 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
     }
 
-    private static String reverseString(String str) {
+    private String reverseString(String str) {
         StringBuilder result = new StringBuilder();
 
         while (str.length() >= 3) {
@@ -83,14 +76,11 @@ public class AlgorithmicsActivity extends AppCompatActivity {
         return result.toString();
     }
 
-    static String recursiveReverse(String s) {
-        if ((null == s) || (s.length() <= 1)) {
-            return s;
-        }
-        return recursiveReverse(s.substring(1)) + s.charAt(0);
+    private String recursiveReverse(String s) {
+        StringBuffer buffer = new StringBuffer(s);
+        s = buffer.reverse().toString();
+        return s;
     }
-
-
 }
 
 
