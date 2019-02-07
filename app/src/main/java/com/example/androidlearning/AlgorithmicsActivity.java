@@ -13,6 +13,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
     private EditText sumEditText;
     private TextView inputStringView;
     private EditText reversedStringText;
+    private AlgorithmicsUtils algorithmicsUtils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,8 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                AlgorithmicsUtils instance = AlgorithmicsUtils.getInstance();
-                inputDigitTextView.setText(instance.stringToInteger(s.toString()));
+                algorithmicsUtils = AlgorithmicsUtils.getInstance();
+                inputDigitTextView.setText(algorithmicsUtils.stringToInteger(s.toString()));
             }
 
             @Override
@@ -47,8 +48,8 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                AlgorithmicsUtils instance = AlgorithmicsUtils.getInstance();
-                inputStringView.setText(instance.reverseStringByThreeSymbols(s.toString()));
+                algorithmicsUtils = AlgorithmicsUtils.getInstance();
+                inputStringView.setText(algorithmicsUtils.reverseStringByThreeSymbols(s.toString()));
             }
 
             @Override

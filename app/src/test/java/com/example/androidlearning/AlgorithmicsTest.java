@@ -6,20 +6,20 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AlgorithmicsTest {
-    private AlgorithmicsUtils string;
+    private AlgorithmicsUtils algorithmicsUtils;
 
     @Before
     public void setUp() throws Exception {
-        string = AlgorithmicsUtils.getInstance();
+        algorithmicsUtils = AlgorithmicsUtils.getInstance();
     }
 
     @Test
     public void stringToInteger() throws Exception {
-        assertEquals("10", string.stringToInteger("1234"));
+        assertEquals("10", algorithmicsUtils.stringToInteger("1234"));
     }
 
     @Test
     public void reverseStringByThreeSymbols() throws Exception {
-        assertEquals("cba", string.reverseStringByThreeSymbols("abc"));
+        assertEquals("cba", algorithmicsUtils.reverseStringByThreeSymbols("abc"));
     }
 }
