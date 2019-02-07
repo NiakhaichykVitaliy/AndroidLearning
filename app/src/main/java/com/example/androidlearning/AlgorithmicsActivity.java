@@ -13,6 +13,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
     private EditText sumEditText;
     private TextView inputStringView;
     private EditText reversedStringText;
+    private AlgorithmicsUtils algorithmicsUtils = AlgorithmicsUtils.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +32,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                int sum = 0;
-                for (int i = 0; i < s.length(); i++) {
-                    int digitChar = Character.getNumericValue(s.charAt(i));
-                    sum += digitChar;
-                }
-                inputDigitTextView.setText(String.valueOf(sum));
-
+                inputDigitTextView.setText(algorithmicsUtils.stringToInteger(s.toString()));
             }
 
             @Override
@@ -52,32 +47,12 @@ public class AlgorithmicsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                inputStringView.setText(reverseStringByThreeSymbols(s.toString()));
+                inputStringView.setText(algorithmicsUtils.reverseStringByThreeSymbols(s.toString()));
             }
 
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-    }
-
-    private String reverseStringByThreeSymbols(String str) {
-        StringBuilder result = new StringBuilder();
-
-        while (str.length() >= 3) {
-            String k = str.substring(0, 3);
-            result.append(reverseString(k));
-            str = str.substring(3);
-        }
-        str = reverseString(str);
-        result.append(str);
-
-        return result.toString();
-    }
-
-    private String reverseString(String s) {
-        StringBuffer buffer = new StringBuffer(s);
-        s = buffer.reverse().toString();
-        return s;
     }
 }
