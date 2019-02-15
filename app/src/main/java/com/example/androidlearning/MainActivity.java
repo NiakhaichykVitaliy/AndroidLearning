@@ -7,20 +7,34 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button;
+    private Button algorithmicsActivityButton;
+    private Button movieActivityButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        movieActivityButton = findViewById(R.id.movieActivityButton);
+        movieActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMoviesActivity();
+            }
+        });
+
+        algorithmicsActivityButton = findViewById(R.id.algorithmicsActivityButton);
+        algorithmicsActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openAlgorithmicsActivity();
             }
         });
+    }
+
+    public void openMoviesActivity() {
+        Intent intent = new Intent(this, MoviesActivity.class);
+        startActivity(intent);
     }
 
     public void openAlgorithmicsActivity() {
