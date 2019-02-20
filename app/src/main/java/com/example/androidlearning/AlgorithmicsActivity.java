@@ -1,5 +1,7 @@
 package com.example.androidlearning;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -15,6 +17,12 @@ public class AlgorithmicsActivity extends AppCompatActivity {
     private EditText reversedStringText;
     private AlgorithmicsUtils algorithmicsUtils = AlgorithmicsUtils.getInstance();
 
+
+    public static void openActivity(Context context) {
+        Intent intent = new Intent(context, AlgorithmicsActivity.class);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +32,7 @@ public class AlgorithmicsActivity extends AppCompatActivity {
         sumEditText = findViewById(R.id.sum_edit_text);
         inputStringView = findViewById(R.id.input_string_view);
         reversedStringText = findViewById(R.id.reversed_string_text);
+
 
         sumEditText.addTextChangedListener(new TextWatcher() {
             @Override

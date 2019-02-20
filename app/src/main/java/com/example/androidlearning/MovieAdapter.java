@@ -6,62 +6,48 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieAdapter extends RecyclerView.Adapter {
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
-    private List<String> mItems = new ArrayList<>();
+    private List<Movie> movies = new ArrayList<>();
 
-    public void setmItems(List<String> items) {
-        mItems = items;
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == 0)
-            return MovieViewHolder.inflete(parent);
-        else
-            return null;
+    public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_row, parent, false);
+        return new MovieViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof MovieViewHolder) {
-            ((MovieViewHolder) holder).bind(mItems.get(position));
-        }
+    public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
+        holder.bind(movies.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        if (movies == null)
+            return 0;
+        return movies.size();
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        return 0;
-    }
+    class MovieViewHolder extends RecyclerView.ViewHolder {
 
-
-    public static class MovieViewHolder extends RecyclerView.ViewHolder {
-
-        private TextView movieView;
-
-        public static MovieViewHolder inflete(ViewGroup parent) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_row, parent, false);
-            return new MovieViewHolder(view);
-        }
+        private TextView movieTitleTextView;
 
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
-            movieView = itemView.findViewById(R.id.tvMovieName);
+            movieTitleTextView = itemView.findViewById(R.id.movieTitleView);
         }
 
-        public void bind(String text) {
-            movieView.setText(text);
+        public void bind(Movie text) {
+            movieTitleTextView.setText(text.name);
         }
     }
 }

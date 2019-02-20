@@ -1,6 +1,5 @@
 package com.example.androidlearning;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,12 +32,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openMoviesActivity() {
-        Intent intent = new Intent(this, MoviesActivity.class);
-        startActivity(intent);
+        MoviesActivity moviesActivity = new MoviesActivity();
+        moviesActivity.openActivity(this);
     }
 
     public void openAlgorithmicsActivity() {
-        Intent intent = new Intent(this, AlgorithmicsActivity.class);
-        startActivity(intent);
+        AlgorithmicsActivity.openActivity(this);
     }
 }

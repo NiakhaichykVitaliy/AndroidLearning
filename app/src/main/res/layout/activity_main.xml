@@ -8,18 +8,12 @@
         android:id="@+id/algorithmicsActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="open AlgorithmicsActivity">
-
-    </Button>
+        android:text="@string/open_algorithmicsActivity"/>
 
     <Button
         android:id="@+id/movieActivityButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:text="open MoviesActivity">
-
-    </Button>
+        android:text="@string/open_moviesActivity"/>
 
 </LinearLayout>
