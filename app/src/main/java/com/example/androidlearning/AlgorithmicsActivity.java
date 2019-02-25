@@ -17,7 +17,6 @@ public class AlgorithmicsActivity extends AppCompatActivity {
     private EditText reversedStringText;
     private AlgorithmicsUtils algorithmicsUtils = AlgorithmicsUtils.getInstance();
 
-
     public static void openActivity(Context context) {
         Intent intent = new Intent(context, AlgorithmicsActivity.class);
         context.startActivity(intent);
@@ -32,7 +31,6 @@ public class AlgorithmicsActivity extends AppCompatActivity {
         sumEditText = findViewById(R.id.sum_edit_text);
         inputStringView = findViewById(R.id.input_string_view);
         reversedStringText = findViewById(R.id.reversed_string_text);
-
 
         sumEditText.addTextChangedListener(new TextWatcher() {
             @Override

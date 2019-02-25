@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +33,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     @Override
     public int getItemCount() {
-        if (movies == null)
-            return 0;
-        return movies.size();
+       return movies == null ? 0 : movies.size();
     }
 
     class MovieViewHolder extends RecyclerView.ViewHolder {
@@ -43,11 +42,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
-            movieTitleTextView = itemView.findViewById(R.id.movieTitleView);
+            movieTitleTextView = itemView.findViewById(R.id.movie_title_view);
         }
 
         public void bind(Movie text) {
-            movieTitleTextView.setText(text.name);
+            movieTitleTextView.setText(text.getName());
         }
     }
 }

@@ -8,13 +8,14 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button algorithmicsActivityButton;
     private Button movieActivityButton;
+    MoviesActivity moviesActivity = new MoviesActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        movieActivityButton = findViewById(R.id.movieActivityButton);
+        movieActivityButton = findViewById(R.id.movie_activity_button);
         movieActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        algorithmicsActivityButton = findViewById(R.id.algorithmicsActivityButton);
+        algorithmicsActivityButton = findViewById(R.id.algorithmics_activity_button);
         algorithmicsActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openMoviesActivity() {
-        MoviesActivity moviesActivity = new MoviesActivity();
         moviesActivity.openActivity(this);
     }
 

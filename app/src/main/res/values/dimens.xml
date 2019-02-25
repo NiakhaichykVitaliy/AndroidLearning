@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--recycleview_row-->
-    <dimen name="text_size">20sp</dimen>
-    <dimen name="padding">10dp</dimen>
+    <!--Movie Item-->
+    <dimen name="movie_title_text_size">20sp</dimen>
+    <dimen name="movie_title_padding">10dp</dimen>
 
 </resources>

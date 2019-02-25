@@ -2,7 +2,7 @@
     <string name="app_name">Android Learning</string>
 
     <!--Main Activity-->
-    <string name="open_algorithmicsActivity">openAlgorithmicsActivity</string>
-    <string name="open_moviesActivity">openMoviesActivity</string>
+    <string name="open_algorithmics_activity">openAlgorithmicsActivity</string>
+    <string name="open_movies_activity">openMoviesActivity</string>
 
 </resources>
