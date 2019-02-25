@@ -8,7 +8,6 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button algorithmicsActivityButton;
     private Button movieActivityButton;
-    MoviesActivity moviesActivity = new MoviesActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openMoviesActivity() {
-        moviesActivity.openActivity(this);
+        MoviesActivity.openActivity(this);
     }
 
     public void openAlgorithmicsActivity() {
