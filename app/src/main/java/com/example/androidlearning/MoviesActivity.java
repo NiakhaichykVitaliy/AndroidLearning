@@ -27,10 +27,10 @@ public class MoviesActivity extends AppCompatActivity {
 
         MovieAdapter movieAdapter = new MovieAdapter();
         recyclerView.setAdapter(movieAdapter);
-        movieAdapter.setMovies(movies());
+        movieAdapter.setMovies(getMovies());
     }
 
-    private List<Movie> movies() {
+    private List<Movie> getMovies() {
         List<Movie> movies = new ArrayList<>();
         movies.add(new Movie("one"));
         movies.add(new Movie("one1"));
